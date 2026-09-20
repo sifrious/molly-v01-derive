@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Feature\HomeCounterTest" file="tests/Feature/HomeCounterTest.php" tests="3" assertions="14" errors="0" failures="0" skipped="0" time="0.175791">
+    <testcase name="it shows Hello stranger to guests" file="tests/Feature/HomeCounterTest.php::it shows Hello stranger to guests" class="Tests\Feature\HomeCounterTest" classname="Tests.Feature.HomeCounterTest" assertions="3" time="0.137461"/>
+    <testcase name="it prevents guests from incrementing the counter" file="tests/Feature/HomeCounterTest.php::it prevents guests from incrementing the counter" class="Tests\Feature\HomeCounterTest" classname="Tests.Feature.HomeCounterTest" assertions="1" time="0.010386"/>
+    <testcase name="it allows a user to log in, see Hello world, increment the counter, then log out" file="tests/Feature/HomeCounterTest.php::it allows a user to log in, see Hello world, increment the counter, then log out" class="Tests\Feature\HomeCounterTest" classname="Tests.Feature.HomeCounterTest" assertions="10" time="0.027943"/>
+  </testsuite>
+</testsuites>

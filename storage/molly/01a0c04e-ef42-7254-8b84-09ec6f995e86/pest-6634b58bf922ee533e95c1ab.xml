@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Feature\HomeCounterTest" file="tests/Feature/HomeCounterTest.php" tests="3" assertions="6" errors="0" failures="2" skipped="0" time="0.173660">
+    <testcase name="it shows Hello stranger to guests" file="tests/Feature/HomeCounterTest.php::it shows Hello stranger to guests" class="Tests\Feature\HomeCounterTest" classname="Tests.Feature.HomeCounterTest" assertions="2" time="0.140630">
+      <failure type="PHPUnit\Framework\ExpectationFailedException">it shows Hello stranger to guestsFailed asserting that '&lt;!DOCTYPE html&gt;\n
+&lt;html lang="en"&gt;\n
+&lt;head&gt;\n
+    &lt;meta charset="UTF-8"&gt;\n
+    &lt;title&gt;App&lt;/title&gt;\n
+    &lt;!-- Livewire Styles --&gt;&lt;style &gt;[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.list-item][wire\:loading\.list-item], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak="x-cloak"],[x-cloak=""] {display: none !important;}[wire\:cloak="wire:cloak"],[wire\:cloak=""] {display: none !important;}dialog#livewire-error::backdrop {background-color: rgba(0, 0, 0, .6);}&lt;/style&gt;\n
+&lt;/head&gt;\n
+&lt;body&gt;\n
+        &lt;!-- Livewire Scripts --&gt;\n
+&lt;script src="http://localhost:8000/livewire-41c5e0c1/livewire.js?id=3dabe98a"   data-csrf="gVSNXwP0tynk0T8BoQYl5PJRYInP2IR9ky2CUZbI" data-module-url="http://localhost:8000/livewire-41c5e0c1" data-update-uri="http://localhost:8000/livewire-41c5e0c1/update" data-navigate-once="true"&gt;&lt;/script&gt;\n
+&lt;/body&gt;\n
+&lt;/html&gt;\n
+' [ASCII](length: 1858) contains "Hello stranger" [ASCII](length: 14).
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponseAssert.php:46
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php:720
+at tests/Feature/HomeCounterTest.php:12</failure>
+    </testcase>
+    <testcase name="it prevents guests from incrementing the counter" file="tests/Feature/HomeCounterTest.php::it prevents guests from incrementing the counter" class="Tests\Feature\HomeCounterTest" classname="Tests.Feature.HomeCounterTest" assertions="1" time="0.009937"/>
+    <testcase name="it allows a user to log in, see Hello world, increment the counter, then log out" file="tests/Feature/HomeCounterTest.php::it allows a user to log in, see Hello world, increment the counter, then log out" class="Tests\Feature\HomeCounterTest" classname="Tests.Feature.HomeCounterTest" assertions="3" time="0.023094">
+      <failure type="PHPUnit\Framework\ExpectationFailedException">it allows a user to log in, see Hello world, increment the counter, then log outFailed asserting that '&lt;!DOCTYPE html&gt;\n
+&lt;html lang="en"&gt;\n
+&lt;head&gt;\n
+    &lt;meta charset="UTF-8"&gt;\n
+    &lt;title&gt;App&lt;/title&gt;\n
+    &lt;!-- Livewire Styles --&gt;&lt;style &gt;[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.list-item][wire\:loading\.list-item], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak="x-cloak"],[x-cloak=""] {display: none !important;}[wire\:cloak="wire:cloak"],[wire\:cloak=""] {display: none !important;}dialog#livewire-error::backdrop {background-color: rgba(0, 0, 0, .6);}&lt;/style&gt;\n
+&lt;/head&gt;\n
+&lt;body&gt;\n
+        &lt;!-- Livewire Scripts --&gt;\n
+&lt;script src="http://localhost:8000/livewire-41c5e0c1/livewire.js?id=3dabe98a"   data-csrf="6HiuVesW4P5MS1OgtIhUAeaY8HRReA5rvCaFPlGn" data-module-url="http://localhost:8000/livewire-41c5e0c1" data-update-uri="http://localhost:8000/livewire-41c5e0c1/update" data-navigate-once="true"&gt;&lt;/script&gt;\n
+&lt;/body&gt;\n
+&lt;/html&gt;\n
+' [ASCII](length: 1858) contains "Hello world" [ASCII](length: 11).
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponseAssert.php:46
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php:720
+at tests/Feature/HomeCounterTest.php:37</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,337 @@
+{
+    "schema_version": 1,
+    "generated_at": "2026-09-20T19:26:47+00:00",
+    "app_name": "Laravel",
+    "environment": "local",
+    "git": {
+        "available": true,
+        "branch": "main",
+        "sha": "32589aa",
+        "dirty": true
+    },
+    "package_version": "dev-main",
+    "probes": {
+        "c1": {
+            "key": "c1",
+            "name": "The owned diff",
+            "prints": "Counts code, comment, and blank lines in the configured application paths. The report includes file totals and breakdowns by path and extension.",
+            "status": "ok",
+            "skip_reason": null,
+            "metrics": {
+                "code_lines": 1193,
+                "comment_lines": 641,
+                "blank_lines": 238,
+                "files": 27,
+                "by_path": {
+                    "app": {
+                        "code_lines": 36,
+                        "files": 3
+                    },
+                    "bootstrap": {
+                        "code_lines": 398,
+                        "files": 4
+                    },
+                    "config": {
+                        "code_lines": 596,
+                        "files": 12
+                    },
+                    "database": {
+                        "code_lines": 152,
+                        "files": 5
+                    },
+                    "resources/js": {
+                        "code_lines": 0,
+                        "files": 1
+                    },
+                    "routes": {
+                        "code_lines": 11,
+                        "files": 2
+                    }
+                },
+                "by_extension": {
+                    "php": {
+                        "code_lines": 1193,
+                        "files": 26
+                    },
+                    "js": {
+                        "code_lines": 0,
+                        "files": 1
+                    }
+                },
+                "paths": [
+                    "app",
+                    "bootstrap",
+                    "config",
+                    "database",
+                    "routes",
+                    "resources/js"
+                ]
+            },
+            "headline": "owned diff: 1193 lines across 27 files",
+            "hand_verify": "cloc --json app bootstrap config database routes resources/js \\\n  | php -r '$s=json_decode(stream_get_contents(STDIN))->SUM;\n      printf(\"owned diff: %d lines across %d files\\n\",$s->code,$s->nFiles);'",
+            "pairs_with": "Code lines and file counts by path and extension.",
+            "caveats": [
+                "Compare the count with a fresh Laravel application using the same directory list to estimate lines added beyond the application skeleton.",
+                "Set molly-complexity.owned_diff.paths to the directories that contain application code. Line counts do not establish design quality."
+            ],
+            "notes": [
+                "Line classification uses text patterns rather than a PHP parser. Comment markers in strings and heredocs can change the counts. The classifier treats PHP 8 attributes as comments to match cloc. Counts can differ from cloc."
+            ],
+            "warnings": [],
+            "duration_ms": 2
+        },
+        "c2": {
+            "key": "c2",
+            "name": "The welded call sites",
+            "prints": "Counts calls to constructors with literal class names and static method calls matched by the printed grep patterns. The report separates recognized facade calls from other static calls.",
+            "status": "ok",
+            "skip_reason": null,
+            "metrics": {
+                "welded_new": 0,
+                "bare_static_total": 0,
+                "bare_static_facades": 0,
+                "bare_static_candidates": 0,
+                "files_scanned": 3,
+                "welded_new_sites": [],
+                "bare_static_sites": [],
+                "sites_truncated": false
+            },
+            "headline": "welded new: 0 / bare static calls: 0",
+            "hand_verify": "grep -rE --include='*.php' -o 'new [A-Z][A-Za-z0-9_\\\\]*\\(' app \\\n  | wc -l | xargs printf 'welded new: %s\\n'\ngrep -rE --include='*.php' -o '\\b[A-Z][A-Za-z0-9_]*::[a-zA-Z_]+\\(' app \\\n  | grep -vE '(self|static|parent)::' | wc -l | xargs printf 'bare static calls: %s\\n'",
+            "pairs_with": "Constructor calls, static calls, and recognized facade calls.",
+            "caveats": [
+                "The constructor pattern excludes new static, variable class names, and fully qualified names with a leading backslash. Review the reported calls before deciding whether dependency injection would help.",
+                "Laravel facades resolve services from the container. Facade calls remain in the static-call total and have a separate count. Eloquent static calls remain candidates unless recognized as facades."
+            ],
+            "notes": [
+                "The grep pattern misses constructor calls with a leading backslash, such as new \\App\\Foo(. The probe uses the same pattern.",
+                "Matches inside comments and strings are counted; grep counts them too.",
+                "The facade split is presented alongside the grep totals, never subtracted from them."
+            ],
+            "warnings": [],
+            "duration_ms": 0
+        },
+        "c3": {
+            "key": "c3",
+            "name": "The lonely files",
+            "prints": "Lists PHP files with exactly one recorded author, ordered by the number of commits that changed each file. The configured minimum line count and list limit apply.",
+            "status": "ok",
+            "skip_reason": null,
+            "metrics": {
+                "top": [
+                    {
+                        "path": "resources/views/welcome.blade.php",
+                        "commits": 1,
+                        "author": "Mary Perry",
+                        "code_lines": 210
+                    },
+                    {
+                        "path": "config/database.php",
+                        "commits": 1,
+                        "author": "Mary Perry",
+                        "code_lines": 119
+                    },
+                    {
+                        "path": "config/logging.php",
+                        "commits": 1,
+                        "author": "Mary Perry",
+                        "code_lines": 86
+                    },
+                    {
+                        "path": "config/cache.php",
+                        "commits": 1,
+                        "author": "Mary Perry",
+                        "code_lines": 70
+                    },
+                    {
+                        "path": "config/queue.php",
+                        "commits": 1,
+                        "author": "Mary Perry",
+                        "code_lines": 65
+                    },
+                    {
+                        "path": "config/mail.php",
+                        "commits": 1,
+                        "author": "Mary Perry",
+                        "code_lines": 57
+                    },
+                    {
+                        "path": "database/migrations/0001_01_01_000002_create_jobs_table.php",
+                        "commits": 1,
+                        "author": "Mary Perry",
+                        "code_lines": 47
+                    },
+                    {
+                        "path": "config/molly.php",
+                        "commits": 1,
+                        "author": "Mary Perry",
+                        "code_lines": 44
+                    },
+                    {
+                        "path": "database/migrations/0001_01_01_000000_create_users_table.php",
+                        "commits": 1,
+                        "author": "Mary Perry",
+                        "code_lines": 38
+                    },
+                    {
+                        "path": "config/filesystems.php",
+                        "commits": 1,
+                        "author": "Mary Perry",
+                        "code_lines": 36
+                    }
+                ],
+                "files_with_history": 30,
+                "lonely_total": 30,
+                "filtered_missing": 0,
+                "filtered_tiny": 20,
+                "min_lines": 30,
+                "limit": 10
+            },
+            "headline": "lonely files: 30 of 30 churned php files have exactly one author",
+            "hand_verify": "git log --no-merges --pretty=format:'@%an' --name-only -- '*.php' \\\n  | awk '/^@/ {au=substr($0,2); next}\n         NF {ch[$0]++; if (!seen[$0\",\"au]++) auth[$0]++}\n         END {for (f in ch) if (auth[f]==1) print ch[f], f}' \\\n  | sort -rn | head",
+            "pairs_with": "Commit counts and current code lines for files with one recorded author.",
+            "caveats": [
+                "One author can mean a new file or a small change history. The minimum line count excludes small files but does not establish a maintenance problem.",
+                "Git history must be available in the measured workspace. Merge commits are excluded."
+            ],
+            "notes": [
+                "The shell command lists up to ten files without checking current size. The probe applies the configured list limit and excludes missing, unreadable, binary, and undersized files.",
+                "Author names use the exact %an value from Git. Different spellings count as different authors in both the probe and shell command.",
+                "Runs git with -c core.quotepath=off so non-ASCII paths arrive unescaped; the one-liner does not pass that flag."
+            ],
+            "warnings": [],
+            "duration_ms": 31
+        },
+        "c4": {
+            "key": "c4",
+            "name": "The hotspots",
+            "prints": "Lists commit counts alongside current code lines for frequently changed PHP files in the configured application paths. The report keeps both measurements separate.",
+            "status": "ok",
+            "skip_reason": null,
+            "metrics": {
+                "since": "24 months ago",
+                "commits_scanned": 1,
+                "files_touched": 30,
+                "points": [
+                    {
+                        "path": "app/Http/Controllers/Controller.php",
+                        "churn": 1,
+                        "code_lines": 5
+                    },
+                    {
+                        "path": "app/Models/User.php",
+                        "churn": 1,
+                        "code_lines": 19
+                    },
+                    {
+                        "path": "app/Providers/AppServiceProvider.php",
+                        "churn": 1,
+                        "code_lines": 12
+                    },
+                    {
+                        "path": "bootstrap/app.php",
+                        "churn": 1,
+                        "code_lines": 16
+                    },
+                    {
+                        "path": "bootstrap/providers.php",
+                        "churn": 1,
+                        "code_lines": 5
+                    },
+                    {
+                        "path": "config/app.php",
+                        "churn": 1,
+                        "code_lines": 22
+                    },
+                    {
+                        "path": "config/auth.php",
+                        "churn": 1,
+                        "code_lines": 29
+                    },
+                    {
+                        "path": "config/cache.php",
+                        "churn": 1,
+                        "code_lines": 70
+                    },
+                    {
+                        "path": "config/database.php",
+                        "churn": 1,
+                        "code_lines": 119
+                    },
+                    {
+                        "path": "config/filesystems.php",
+                        "churn": 1,
+                        "code_lines": 36
+                    },
+                    {
+                        "path": "config/logging.php",
+                        "churn": 1,
+                        "code_lines": 86
+                    },
+                    {
+                        "path": "config/mail.php",
+                        "churn": 1,
+                        "code_lines": 57
+                    },
+                    {
+                        "path": "config/molly-complexity.php",
+                        "churn": 1,
+                        "code_lines": 24
+                    },
+                    {
+                        "path": "config/molly.php",
+                        "churn": 1,
+                        "code_lines": 44
+                    },
+                    {
+                        "path": "config/queue.php",
+                        "churn": 1,
+                        "code_lines": 65
+                    },
+                    {
+                        "path": "config/services.php",
+                        "churn": 1,
+                        "code_lines": 20
+                    },
+                    {
+                        "path": "config/session.php",
+                        "churn": 1,
+                        "code_lines": 24
+                    },
+                    {
+                        "path": "database/factories/UserFactory.php",
+                        "churn": 1,
+                        "code_lines": 26
+                    },
+                    {
+                        "path": "database/migrations/0001_01_01_000000_create_users_table.php",
+                        "churn": 1,
+                        "code_lines": 38
+                    },
+                    {
+                        "path": "database/migrations/0001_01_01_000001_create_cache_table.php",
+                        "churn": 1,
+                        "code_lines": 25
+                    }
+                ],
+                "files_missing_on_disk": 0,
+                "limit": 20,
+                "loc_axis_defense": "Code lines measure current file size. The probe does not calculate cyclomatic complexity."
+            },
+            "headline": "hotspots: churn x lines for the 20 most-churned php files since 24 months ago",
+            "hand_verify": "git log --no-merges --since='24 months ago' --pretty=format: --name-only -- '*.php' \\\n  | awk 'NF {ch[$0]++} END {for (f in ch) print ch[f], f}' \\\n  | sort -rn | head -20",
+            "pairs_with": "Commit counts and current code lines by file.",
+            "caveats": [
+                "File size and change frequency describe different properties. The report does not multiply the measurements or produce a complexity score.",
+                "Churn counts commits that touch a path, not the number of changed lines. The scan does not follow files across renames.",
+                "Current line counts describe the working tree. Commit counts describe the configured history period, including commits made before a file became smaller."
+            ],
+            "notes": [
+                "The probe includes only files within molly-complexity.owned_diff.paths. The shell command lists PHP files throughout the repository.",
+                "Runs git with -c core.quotepath=off so non-ASCII paths arrive unescaped; the one-liner does not pass that flag."
+            ],
+            "warnings": [],
+            "duration_ms": 30
+        }
+    }
+}
